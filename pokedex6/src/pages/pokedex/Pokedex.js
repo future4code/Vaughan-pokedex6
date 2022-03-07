@@ -1,8 +1,10 @@
+import {Conteiner} from './Styled'
+
 function PokedexPage() {
     return (
-      <div>
+      <Conteiner>
        <h1>PokedexPage</h1>
-      </div>
+      </Conteiner>
     );
   }
   
