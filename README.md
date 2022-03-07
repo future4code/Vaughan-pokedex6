@@ -1,9 +1,10 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Rafael Salmeron
+- Grazielle Martins
+- Victor Simões
+- Thiago Henrique 
 
 Link do Surge: www.link.com.br
 
