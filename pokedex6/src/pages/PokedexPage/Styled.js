@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Conteiner = styled.div`
-    height: 100vh;
+    height: 97vh;
     display: grid ;
     grid-template-rows: 1fr 18fr 1fr;
     grid-template-columns: 1fr;
@@ -32,9 +32,10 @@ export const Center = styled.div`
     display: flex ;
     display: inline-block;
     width: 89%;
-    height: 100% ;
     margin: 0px;
     border: 2px solid black;
+    box-shadow: 10px 10px #888888;
+    
 `
 export const Right = styled.div`
     display: flex ;
@@ -75,14 +76,16 @@ export const NameType = styled.div`
     border: 2px solid black;
     border-radius: 10px;
     width: 95%;
-    margin: 5px;
+    margin: 10px 0px 20px 10px;
     padding: 5px;
+    align-content: center;
 `
 
 export const BoxBottom = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
+    margin-top: 20px;
 `
 export const Description = styled.div`
     background-color: #8dc73f;

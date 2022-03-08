@@ -5,13 +5,13 @@ function PokedexPage() {
     return (
       <Conteiner>
 
-        <Header>header</Header>
+        <Header></Header>
         <Centralizador>
-        <Left>L</Left>
+        <Left></Left>
         <Center>
         <h1>PokedexPage</h1>
         </Center>
-       <Right>D</Right>
+       <Right></Right>
         </Centralizador>
 
        <Footer>
