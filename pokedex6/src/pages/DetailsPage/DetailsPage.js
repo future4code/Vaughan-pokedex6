@@ -80,14 +80,11 @@ const DetailsPage = () => {
           <NameType>
             <div><b>Nome:</b> {pokemon.name}</div>
             <div><b>Types:</b> {types}</div>
-          
+            <div><b>Peso :</b> {pokemon.weight} hg</div>
+         <div><b>Altura :</b> {pokemon.height}dm</div>
 
           </NameType>
-         <NameType>
-         <div><b>Peso :</b> {pokemon.weight} hg</div>
-         <div><b>Altura :</b> {pokemon.height}dm</div>
-         <div><b>Altura :</b> {pokemon.location_area_encounters}dm</div>
-         </NameType>
+       
           <BoxBottom>
             <div></div>
 
