@@ -16,11 +16,13 @@ const HomePage = () => {
   let offset = 0
   const [pokemons, setPokemons] = useState([]);
   const pegarPokemon = () => {
+
     axios.get(`${BASE_URL}/pokemon?limit=20&offset=${offset}`)
       .then(({ data }) => {
         const newPokemon = []
         data.results.forEach((p) => newPokemon.push(p.name))
         setPokemons((oldPokemon) => [...oldPokemon, ...newPokemon]);
+
       })
       offset += 20
   };
