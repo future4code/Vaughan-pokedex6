@@ -16,6 +16,7 @@ const  DetailsPage = () => {
   const params = useParams();
   const [pokemon, setPokemon] = useState([]);
   const [types, setTypes] = useState("");
+  const [img, setImg] = useState("");
   
   const getDetails = ((id) => {
     
@@ -24,7 +25,7 @@ const  DetailsPage = () => {
       .then((res) => {
         setPokemon(res.data)
         setTypes(res.data.types.map((reg) => reg.type.name).join())
- 
+        setImg(res.data.sprites.front_default)
       })
       
       .catch((erro) => console.log(erro.message))
@@ -42,7 +43,7 @@ const  DetailsPage = () => {
         <Center>
           <h1>Detalhes do Pokemon:</h1>
           <h1>{pokemon.name}</h1>
-          <img src={pokemon.sprites.front_default}></img>
+          <img src={img}></img>
         </Center>
         <Right></Right>
       </Centralizador>
