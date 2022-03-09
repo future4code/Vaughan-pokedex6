@@ -26,9 +26,10 @@ const HomePage = () => {
 
   return (
     <BoxHome>
+        <h1>HomePage</h1>
       <Header>
         <div>
-          <h1>HomePage</h1>
+        
         </div>
         <div>
         <button onClick={() => goToPokedex(navigate)}>Pokedex</button>
