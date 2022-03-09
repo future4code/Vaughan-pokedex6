@@ -1,41 +1,42 @@
-import {Conteiner, Header, Footer, Left, Right, Center, ConteinerFooter, Centralizador, NameType, BoxBottom, Description} from './Styled'
+import { Conteiner, Header, Footer, Left, Right, Center, ConteinerFooter, Centralizador, NameType, BoxBottom, Description } from './Styled'
 import directional from '../../assets/direcional.png'
+import { HeaderAll } from '../../components/Header/Header';
 
 function PokedexPage() {
-    return (
-      <Conteiner>
+  return (
+    <Conteiner>
 
-        <Header></Header>
-        <Centralizador>
+      <HeaderAll />
+      <Centralizador>
         <Left></Left>
         <Center>
-        <h1>PokedexPage</h1>
+          <h1>PokedexPage</h1>
         </Center>
-       <Right></Right>
-        </Centralizador>
+        <Right></Right>
+      </Centralizador>
 
-       <Footer>
-         <ConteinerFooter>
+      <Footer>
+        <ConteinerFooter>
 
-         <NameType>
-           <div>Pokemon Name</div>
-           <div>type</div>
-         </NameType>
+          <NameType>
+            <div>Pokemon Name</div>
+            <div>type</div>
+          </NameType>
 
-         <BoxBottom>
-         <div>
-           <img alt='direcional' src={directional} width='50px' height='40px'/>
-         </div>
-         <Description>Description</Description>
-         <button>A</button>
-         <button>B</button>
-         </BoxBottom>
+          <BoxBottom>
+            <div>
+              <img alt='direcional' src={directional} width='50px' height='40px' />
+            </div>
+            <Description>Description</Description>
+            <button>A</button>
+            <button>B</button>
+          </BoxBottom>
 
-         </ConteinerFooter>
-       </Footer>
+        </ConteinerFooter>
+      </Footer>
 
-      </Conteiner>
-    );
-  }
-  
-  export default PokedexPage;
+    </Conteiner>
+  );
+}
+
+export default PokedexPage;

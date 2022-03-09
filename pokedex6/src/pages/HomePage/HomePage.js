@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { goToPokedex, goToDetails } from "../../routes/coordinator";
 import PokeCard from "../../components/PokeCard/PokeCard";
 import { BoxHome, Header, ConteinerHome } from "./Styled";
+import { HeaderAll } from "../../components/Header/Header";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -26,20 +27,15 @@ const HomePage = () => {
 
   return (
     <BoxHome>
-        <h1>HomePage</h1>
-      <Header>
-        <div>
-        
-        </div>
-        <div>
-        <button onClick={() => goToPokedex(navigate)}>Pokedex</button>
-        </div>
+
+        <HeaderAll/>
+
+
       
-      </Header>
-      
+
       <ConteinerHome>
         {pokemons.map((pokemon, index) => (
-          <PokeCard pokemon={pokemon.name} key={pokemon.name}/>
+          <PokeCard pokemon={pokemon.name} key={pokemon.name} />
         ))}
       </ConteinerHome>
     </BoxHome>

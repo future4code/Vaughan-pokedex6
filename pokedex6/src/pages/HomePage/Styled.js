@@ -16,7 +16,7 @@ export const BoxHome = styled.div`
 export const Header = styled.header`
     display: flex;
     background-color: #fe0000;
-    justify-content: right;
+    justify-content: space-between;
     align-items: center;
     color: #FFF;
     -webkit-text-stroke-width: 1px;
