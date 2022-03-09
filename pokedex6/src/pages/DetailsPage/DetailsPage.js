@@ -10,6 +10,7 @@ import { BASE_URL } from "../../constants/urls";
 import { useParams } from "react-router-dom";
 import { useEffect , useState} from "react";
 import PokeCard from "../../components/PokeCard/PokeCard";
+import { HeaderAll } from "../../components/Header/Header";
 
 const  DetailsPage = () => {
   const navigate = useNavigate();
@@ -37,7 +38,7 @@ const  DetailsPage = () => {
 
   return (
     <Conteiner>
-      <Header></Header>
+     <HeaderAll/>
       <Centralizador>
         <Left></Left>
         <Center>

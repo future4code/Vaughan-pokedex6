@@ -5,8 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { goToPokedex, goToDetails } from "../../routes/coordinator";
 import PokeCard from "../../components/PokeCard/PokeCard";
 import { BoxHome, Header, ConteinerHome } from "./Styled";
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
+
+import { HeaderAll } from "../../components/Header/Header";
+
+
+
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -36,19 +39,13 @@ useEffect(() => {
   window.addEventListener('scroll', handleScroll)
 }, []);
 
-return (
-  <BoxHome>
-    <Header>
-      <div>
-        <h1>HomePage</h1>
-      </div>
-      <div>
-        <Button onClick={() => goToPokedex(navigate)} color="secondary" variant="conteined" size="small">
-          Pokedex
-        </Button>
-      </div>
 
-    </Header>
+  return (
+    <BoxHome>
+
+        <HeaderAll/>
+
+
 
     <ConteinerHome>
       {pokemons.map((pokemon, i) => (
@@ -57,6 +54,7 @@ return (
     </ConteinerHome>
   </BoxHome>
 );
+
 };
 
 export default HomePage;

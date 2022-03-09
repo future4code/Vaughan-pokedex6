@@ -14,8 +14,10 @@ export const BoxHome = styled.div`
 `
 export const Header = styled.header`
     display: flex;
+
     background-color: #ff3334;
     justify-content: space-around;
+
     align-items: center;
     color: #FFF;
     -webkit-text-stroke-width: 1px;
