@@ -15,7 +15,7 @@ const HomePage = () => {
       .get(`${BASE_URL}/pokemon`)
       .then((resposta) => {
         setPokemons(resposta.data.results);
-        console.log(resposta.data.results);
+        
       })
       .catch((erro) => console.log(erro.message));
   };
