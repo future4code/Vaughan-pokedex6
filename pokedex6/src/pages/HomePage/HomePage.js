@@ -50,10 +50,14 @@ useEffect(() => {
 
 
     <ConteinerHome>
-      {pokemons.map((pokemon, i) => (
-        <PokeCard key={i} pokemon={pokemon} />
+     
+      {pokemons.map((pokemon, i , name) => (
+        <PokeCard key={i} pokemon={pokemon } />
+       
       ))}
+    
     </ConteinerHome>
+
   </BoxHome>
 );
 
