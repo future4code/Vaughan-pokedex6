@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../constants/urls";
 import { useNavigate } from "react-router-dom";
-import { goToPokedex } from "../../routes/coordinator";
+import { goToPokedex, goToDetails } from "../../routes/coordinator";
 import PokeCard from "../../components/PokeCard/PokeCard";
 import { BoxHome, Header, ConteinerHome } from "./Styled";
 
 const HomePage = () => {
   const navigate = useNavigate();
   const [pokemons, setPokemons] = useState([]);
+
   const pegarPokemon = () => {
     axios
       .get(`${BASE_URL}/pokemon`)
