@@ -22,12 +22,18 @@ const  PokeCard  = (props) => {
       .then(response => {
     
         setPokemon(response.data);
-        console.log(response.data)
+      
       })
       .catch(err => {
         console.log(err);
       });
   };
+
+  
+  const onClickCard = (id) => {
+    goToDetails(navigate, id)
+  }
+
 
     return (
     <Conteiner>
@@ -36,7 +42,7 @@ const  PokeCard  = (props) => {
           alt={pokemon.name} />)}
           <div>
             <button >adicionar a pokedex</button>
-            <button onClick={()=>goToDetails(navigate)}>ver detalhes</button>
+            <button onClick={()=>onClickCard(pokemon.id)}>ver detalhes</button>
           </div>
     </Conteiner>
     );

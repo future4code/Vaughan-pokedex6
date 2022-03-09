@@ -20,7 +20,7 @@ const  DetailsPage = () => {
   const getDetails = ((id) => {
     
     axios
-      .get(`${BASE_URL}/pokemon/${id}`)
+      .get(`${BASE_URL}/pokemon/${params.id}`)
       .then((res) => 
         console.log(res.data)
         )
