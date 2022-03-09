@@ -11,17 +11,16 @@ export const ConteinerHome = styled.div`
 
 export const BoxHome = styled.div`
     display: grid;
-
 `
 export const Header = styled.header`
     display: flex;
-    background-color: #fe0000;
-    justify-content: space-between;
+
+    background-color: #ff3334;
+    justify-content: space-around;
+
     align-items: center;
     color: #FFF;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-
-              
+    -webkit-text-stroke-color: black;              
 `
 

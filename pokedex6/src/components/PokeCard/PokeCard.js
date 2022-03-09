@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Body, Cell, Conteiner, IMG, Row, Table } from "./styled";
+import { Conteiner, IMG} from "./styled";
 import { useNavigate } from "react-router-dom";
-import { goToDetails, goToPokedex } from "../../routes/coordinator";
+import { goToDetails} from "../../routes/coordinator";
 
 const  PokeCard  = (props) => {
     const navigate = useNavigate();
@@ -38,7 +38,7 @@ const  PokeCard  = (props) => {
     return (
     <Conteiner>
         {pokemon && (
-          <IMG src={pokemon.sprites.front_default} 
+          <IMG src={pokemon.sprites.other.dream_world.front_default} 
           alt={pokemon.name} />)}
           <div>
             <button >adicionar a pokedex</button>

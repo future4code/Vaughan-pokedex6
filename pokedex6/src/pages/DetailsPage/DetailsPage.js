@@ -16,31 +16,35 @@ const  DetailsPage = () => {
   const navigate = useNavigate();
   const params = useParams();
   const [pokemon, setPokemon] = useState([]);
- 
+  const [types, setTypes] = useState("");
+  const [img, setImg] = useState("");
   
   const getDetails = ((id) => {
     
     axios
       .get(`${BASE_URL}/pokemon/${params.id}`)
-      .then((res) => 
-        console.log(res.data)
-        )
+      .then((res) => {
+        setPokemon(res.data)
+        setTypes(res.data.types.map((reg) => reg.type.name).join())
+        setImg(res.data.sprites.front_default)
+      })
       
       .catch((erro) => console.log(erro.message))
   });
   useEffect(() => {
     getDetails();
   }, []);
+
+
   return (
     <Conteiner>
      <HeaderAll/>
       <Centralizador>
         <Left></Left>
         <Center>
-          <h1>Detalhes do Pokemon</h1>
-          {pokemon.map((pokemon, index) => (
-          <PokeCard pokemon={pokemon.name} key={pokemon.name}/>
-        ))}
+          <h1>Detalhes do Pokemon:</h1>
+          <h1>{pokemon.name}</h1>
+          <img src={img}></img>
         </Center>
         <Right></Right>
       </Centralizador>
@@ -48,15 +52,15 @@ const  DetailsPage = () => {
       <Footer>
         <ConteinerFooter>
           <NameType>
-            <div>Pokemon Name</div>
-            <div>type</div>
+            <div><b>Nome:</b> {pokemon.name}</div>
+            <div><b>Types:</b> {types}</div>
           </NameType>
 
           <BoxBottom>
             <div></div>
             <Description>Description</Description>
-            <button>Voltar</button>
-            <button>Pokedex</button>
+            <button onClick={()=>goToHome(navigate)}>Voltar</button>
+            <button onClick={()=>goToPokedex(navigate)}>Pokedex</button>
           </BoxBottom>
         </ConteinerFooter>
       </Footer>
