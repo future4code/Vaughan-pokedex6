@@ -44,29 +44,17 @@ const HomePage = () => {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
-
-return (
-  <BoxHome>
-    <Header>
-      <div>
-        <h1>HomePage</h1>
-      </div>
-      <div>
-        <button onClick={() => goToPokedex(navigate)}>Pokedex</button>
-      </div>
-
-    </Header>
-
-    <ConteinerHome>
-      {pokemons.map((pokemon, index) => (
-        <PokeCard pokemon={pokemon.name} key={pokemon.name}
-
-        />
-      ))}
-    </ConteinerHome>
-  </BoxHome>
-);
-      }
-
+  return (
+    <BoxHome>
+      <HeaderHome />
+      <ConteinerHome>
+        {pokemons.map((pokemon, i) => (
+          <PokeCard key={i} pokemon={pokemon} />
+        ))}
+      </ConteinerHome>
+    </BoxHome>
+  );
+};
+  
 
 export default HomePage;
