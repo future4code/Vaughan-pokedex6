@@ -1,24 +1,22 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Body, Cell, Conteiner, IMG, Row, Table } from "./styled";
+import { Conteiner, IMG } from "./styled";
 import { useNavigate } from "react-router-dom";
 import { goToDetails, goToPokedex } from "../../routes/coordinator";
 import { useParams } from "react-router-dom";
+import PokemonThumbnail from "./PokemonThumnail";
 
 const  PokeCard  = (props) => {
     const navigate = useNavigate();
     const [pokemon, setPokemon] = useState("")
     const params = useParams();
 
-  
   useEffect(() => {
     if (pokemon !== props.pokemon) {
-        pegaPokemon(props.pokemon);
-      }
-  }, []) 
-
-  
-  const pegaPokemon = pokeName => {
+      pegaPokemon(props.pokemon);
+    }
+  }, []);
+  const pegaPokemon = (pokeName) => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
       .then(response => {
@@ -26,13 +24,13 @@ const  PokeCard  = (props) => {
         setPokemon(response.data);
        
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   };
 
-  
   const onClickCard = (id) => {
+
     goToDetails(navigate, id)
   }
 
@@ -67,9 +65,9 @@ const  PokeCard  = (props) => {
             <button onClick={() => onClickPokemon(pokemon)}>adicionar a pokedex</button>
             <button onClick={()=>onClickCard(pokemon.id)}>ver detalhes</button>
           </div>
+
     </Conteiner>
-    );
-  
-}
+  );
+};
 
 export default PokeCard;

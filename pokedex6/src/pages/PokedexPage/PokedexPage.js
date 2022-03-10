@@ -41,6 +41,7 @@ function PokedexPage() {
             )
           })}
         </ConteinerHome>
+
         </Center>
         <Right></Right>
       </Centralizador>
@@ -49,7 +50,9 @@ function PokedexPage() {
         <ConteinerFooter>
 
           <NameType>
+
             <div>Pokedex</div>
+
 
           </NameType>
 
