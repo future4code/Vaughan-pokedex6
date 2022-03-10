@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { goToPokedex, goToDetails } from "../../routes/coordinator";
 import PokeCard from "../../components/PokeCard/PokeCard";
 import { BoxHome, Header, ConteinerHome } from "./Styled";
+import useRequestData from "../../hooks/useRequestData";
+
 
 import { HeaderAll, HeaderHome } from "../../components/Header/Header";
 
@@ -12,6 +14,10 @@ const HomePage = () => {
   const navigate = useNavigate();
   let offset = 0;
   const [pokemons, setPokemons] = useState([]);
+  const [pokedex, setPokedex] = useState([])
+  const [pokemon] = useRequestData(`${BASE_URL}/pokedex`);
+
+
   const pegarPokemon = () => {
     axios
       .get(`${BASE_URL}/pokemon?limit=20&offset=${offset}`)
@@ -30,6 +36,7 @@ const HomePage = () => {
     ) {
       pegarPokemon();
     }
+
   };
 
   useEffect(() => {
@@ -49,4 +56,5 @@ const HomePage = () => {
   );
 };
   
+
 export default HomePage;
