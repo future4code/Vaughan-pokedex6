@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { goToPokedex, goToDetails } from "../../routes/coordinator";
 import PokeCard from "../../components/PokeCard/PokeCard";
 import { BoxHome, Header, ConteinerHome } from "./Styled";
+import useRequestData from "../../hooks/useRequestData";
+
 
 import { HeaderAll, HeaderHome } from "../../components/Header/Header";
 
@@ -12,6 +14,10 @@ const HomePage = () => {
   const navigate = useNavigate();
   let offset = 0;
   const [pokemons, setPokemons] = useState([]);
+  const [pokedex, setPokedex] = useState([])
+  const [pokemon] = useRequestData(`${BASE_URL}/pokedex`);
+
+
   const pegarPokemon = () => {
     axios
       .get(`${BASE_URL}/pokemon?limit=20&offset=${offset}`)
@@ -30,6 +36,7 @@ const HomePage = () => {
     ) {
       pegarPokemon();
     }
+
   };
 
   useEffect(() => {
@@ -37,16 +44,29 @@ const HomePage = () => {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
-  return (
-    <BoxHome>
-      <HeaderHome />
-      <ConteinerHome>
-        {pokemons.map((pokemon, i) => (
-          <PokeCard key={i} pokemon={pokemon} />
-        ))}
-      </ConteinerHome>
-    </BoxHome>
-  );
-};
+
+return (
+  <BoxHome>
+    <Header>
+      <div>
+        <h1>HomePage</h1>
+      </div>
+      <div>
+        <button onClick={() => goToPokedex(navigate)}>Pokedex</button>
+      </div>
+
+    </Header>
+
+    <ConteinerHome>
+      {pokemons.map((pokemon, index) => (
+        <PokeCard pokemon={pokemon.name} key={pokemon.name}
+
+        />
+      ))}
+    </ConteinerHome>
+  </BoxHome>
+);
+      }
+
 
 export default HomePage;

@@ -1,16 +1,47 @@
 import { Conteiner, Header, Footer, Left, Right, Center, ConteinerFooter, Centralizador, NameType, BoxBottom, Description } from './Styled'
 import directional from '../../assets/direcional.png'
-import { HeaderAll } from '../../components/Header/Header';
+import { useEffect, useState } from "react";
+import { ConteinerHome } from '../HomePage/Styled';
+import PokeCard from '../../components/PokeCard/PokeCard';
+import { IMG } from '../../components/PokeCard/styled';
+import onClickCard from "../../components/PokeCard/PokeCard"
 
 function PokedexPage() {
+  const [pokedex, setPokedex] = useState([])
+  const getPokemons = ((id) => {
+    setPokedex(JSON.parse(localStorage.getItem("pokemons")))
+
+  })
+
+  useEffect(() => {
+    getPokemons();
+  }, []);
+
+
+
   return (
     <Conteiner>
 
-      <HeaderAll />
+      <Header></Header>
       <Centralizador>
         <Left></Left>
         <Center>
-          <h1>PokedexPage</h1>
+          <h1>Pokedex</h1>
+        <ConteinerHome>
+          {pokedex.length > 0 && pokedex.map((card) => {
+
+            return (
+              <PokeCard key={card.id}>
+                 <div>
+                 <IMG src={card.sprites.front_default}></IMG>
+                  <button >Remover da pokedex</button>
+                  <button onClick={() => onClickCard(card.id)}>ver detalhes</button>
+                </div>
+              </PokeCard>
+            )
+          })}
+        </ConteinerHome>
+
         </Center>
         <Right></Right>
       </Centralizador>
@@ -19,15 +50,17 @@ function PokedexPage() {
         <ConteinerFooter>
 
           <NameType>
-            <div>Pokemon Name</div>
-            <div>type</div>
+
+            <div>Pokedex</div>
+
+
           </NameType>
 
           <BoxBottom>
             <div>
               <img alt='direcional' src={directional} width='50px' height='40px' />
             </div>
-            <Description>Description</Description>
+
             <button>A</button>
             <button>B</button>
           </BoxBottom>
