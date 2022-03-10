@@ -1,41 +1,72 @@
-import {Conteiner, Header, Footer, Left, Right, Center, ConteinerFooter, Centralizador, NameType, BoxBottom, Description} from './Styled'
+import { Conteiner, Header, Footer, Left, Right, Center, ConteinerFooter, Centralizador, NameType, BoxBottom, Description } from './Styled'
 import directional from '../../assets/direcional.png'
+import { useEffect, useState } from "react";
+import { ConteinerHome } from '../HomePage/Styled';
+import PokeCard from '../../components/PokeCard/PokeCard';
+import { IMG } from '../../components/PokeCard/styled';
+import onClickCard from "../../components/PokeCard/PokeCard"
 
 function PokedexPage() {
-    return (
-      <Conteiner>
+  const [pokedex, setPokedex] = useState([])
+  const getPokemons = ((id) => {
+    setPokedex(JSON.parse(localStorage.getItem("pokemons")))
 
-        <Header></Header>
-        <Centralizador>
+  })
+
+  useEffect(() => {
+    getPokemons();
+  }, []);
+
+
+
+  return (
+    <Conteiner>
+
+      <Header></Header>
+      <Centralizador>
         <Left></Left>
         <Center>
-        <h1>PokedexPage</h1>
+          <h1>Pokedex</h1>
+        <ConteinerHome>
+          {pokedex.length > 0 && pokedex.map((card) => {
+
+            return (
+              <PokeCard key={card.id}>
+                 <div>
+                 <IMG src={card.sprites.front_default}></IMG>
+                  <button >Remover da pokedex</button>
+                  <button onClick={() => onClickCard(card.id)}>ver detalhes</button>
+                </div>
+              </PokeCard>
+            )
+          })}
+        </ConteinerHome>
         </Center>
-       <Right></Right>
-        </Centralizador>
+        <Right></Right>
+      </Centralizador>
 
-       <Footer>
-         <ConteinerFooter>
+      <Footer>
+        <ConteinerFooter>
 
-         <NameType>
-           <div>Pokemon Name</div>
-           <div>type</div>
-         </NameType>
+          <NameType>
+            <div>Pokedex</div>
 
-         <BoxBottom>
-         <div>
-           <img alt='direcional' src={directional} width='50px' height='40px'/>
-         </div>
-         <Description>Description</Description>
-         <button>A</button>
-         <button>B</button>
-         </BoxBottom>
+          </NameType>
 
-         </ConteinerFooter>
-       </Footer>
+          <BoxBottom>
+            <div>
+              <img alt='direcional' src={directional} width='50px' height='40px' />
+            </div>
 
-      </Conteiner>
-    );
-  }
-  
-  export default PokedexPage;
+            <button>A</button>
+            <button>B</button>
+          </BoxBottom>
+
+        </ConteinerFooter>
+      </Footer>
+
+    </Conteiner>
+  );
+}
+
+export default PokedexPage;
