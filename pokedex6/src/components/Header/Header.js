@@ -5,7 +5,7 @@ import { goToPokedex, goToDetails, goToHome } from "../../routes/coordinator";
 
 const Header2 = styled.div`
     display: flex;
-    background-color: #fe0000;
+    background-color: #ff3334;
     justify-content: space-between;
     align-items: center;
     color: #FFF;
