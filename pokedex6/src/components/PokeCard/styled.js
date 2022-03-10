@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const Conteiner = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,3 +18,4 @@ export const IMG = styled.img`
   width: 120px;
   height: 120px;
 `;
+

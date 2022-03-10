@@ -19,10 +19,12 @@ import axios from "axios";
 import { BASE_URL } from "../../constants/urls";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+
 import { HeaderAll } from "../../components/Header/Header";
 import { IMG } from "../../components/PokeCard/styled";
 
-const DetailsPage = (props) => {
+
+const DetailsPage = () => {
   const navigate = useNavigate();
   const params = useParams();
   const [pokemon, setPokemon] = useState('');
@@ -56,6 +58,7 @@ console.log(props)
       .catch((erro) => console.log(erro.message));
   };
   console.log(pokemon)
+
   useEffect(() => {
     getDetails();
   }, []);
@@ -67,6 +70,7 @@ console.log(props)
       <Centralizador>
         <Left></Left>
         <Center>
+
           <div>
             <IMG src={img.front_default}/>
             <IMG src={img.back_default}/>
@@ -99,6 +103,7 @@ console.log(props)
             <b>Speed:</b>
             {speed}
           </Description>
+
         </Center>
         <Right></Right>
       </Centralizador>
@@ -113,7 +118,7 @@ console.log(props)
               <b>Types:</b> {types}
             </div>
           </NameType>
-
+          </NameType>
           <BoxBottom>
             <div></div>
 
