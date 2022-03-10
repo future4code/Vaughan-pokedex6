@@ -38,7 +38,7 @@ const DetailsPage = () => {
   const [specialDefense, setSpecialDefense] = useState("");
   const [speed, setSpeed] = useState("");
 
-console.log(props)
+  console.log()
 
   const getDetails = (id) => {
     axios
@@ -65,60 +65,60 @@ console.log(props)
 
   return (
     <Box>
-    <Conteiner>
-      <HeaderAll />
-      <Centralizador>
-        <Left></Left>
-        <Center>
+      <Conteiner>
+        <HeaderAll />
+        <Centralizador>
+          <Left></Left>
+          <Center>
 
-          <div>
-            <IMG src={img.front_default}/>
-            <IMG src={img.back_default}/>
-          </div>
+            <div>
+              <IMG src={img.front_default} />
+              <IMG src={img.back_default} />
+            </div>
+
+            <Description>
+              <b>Habilidades:</b> {ability}
+            </Description>
+            <Description>
+              <b>HP:</b>
+              {hp}
+            </Description>
+            <Description>
+              <b>Attack:</b>
+              {attack}
+            </Description>
+            <Description>
+              <b>Defense:</b>
+              {defense}
+            </Description>
+            <Description>
+              <b>Special-attack:</b>
+              {specialAttack}
+            </Description>
+            <Description>
+              <b>Special-defense:</b>
+              {specialDefense}
+            </Description>
+            <Description>
+              <b>Speed:</b>
+              {speed}
+            </Description>
+
+          </Center>
+          <Right></Right>
+        </Centralizador>
+
+        <Footer>
+          <ConteinerFooter>
+            <NameType>
+              <div>
+                <b>Nome:</b> {pokemon.name}
+              </div>
+              <div>
+                <b>Types:</b> {types}
+              </div>
+            </NameType>
           
-          <Description>
-            <b>Habilidades:</b> {ability}
-          </Description>
-          <Description>
-            <b>HP:</b>
-            {hp}
-          </Description>
-          <Description>
-            <b>Attack:</b>
-            {attack}
-          </Description>
-          <Description>
-            <b>Defense:</b>
-            {defense}
-          </Description>
-          <Description>
-            <b>Special-attack:</b>
-            {specialAttack}
-          </Description>
-          <Description>
-            <b>Special-defense:</b>
-            {specialDefense}
-          </Description>
-          <Description>
-            <b>Speed:</b>
-            {speed}
-          </Description>
-
-        </Center>
-        <Right></Right>
-      </Centralizador>
-
-      <Footer>
-        <ConteinerFooter>
-          <NameType>
-            <div>
-              <b>Nome:</b> {pokemon.name}
-            </div>
-            <div>
-              <b>Types:</b> {types}
-            </div>
-          </NameType>
-          </NameType>
           <BoxBottom>
             <div></div>
 
@@ -128,7 +128,7 @@ console.log(props)
         </ConteinerFooter>
       </Footer>
     </Conteiner>
-    </Box>
+    </Box >
   );
 };
 

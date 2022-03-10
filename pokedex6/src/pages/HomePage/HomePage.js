@@ -6,7 +6,7 @@ import { goToPokedex, goToDetails } from "../../routes/coordinator";
 import PokeCard from "../../components/PokeCard/PokeCard";
 import { BoxHome, Header, ConteinerHome } from "./Styled";
 
-import { HeaderAll } from "../../components/Header/Header";
+import { HeaderAll, HeaderHome } from "../../components/Header/Header";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -39,7 +39,7 @@ const HomePage = () => {
 
   return (
     <BoxHome>
-      <HeaderAll />
+      <HeaderHome />
       <ConteinerHome>
         {pokemons.map((pokemon, i) => (
           <PokeCard key={i} pokemon={pokemon} />
