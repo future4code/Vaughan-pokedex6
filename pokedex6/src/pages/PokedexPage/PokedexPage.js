@@ -29,7 +29,6 @@ function PokedexPage() {
           <h1>Pokedex</h1>
         <ConteinerHome>
           {pokedex.length > 0 && pokedex.map((card) => {
-
             return (
               <PokeCard key={card.id}>
                  <div>
