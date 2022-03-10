@@ -1,14 +1,19 @@
 import styled from "styled-components";
 
 export const Conteiner = styled.div`
-    display: flex;
-    flex-direction: column;
-    opacity: 0.9;
-    background-color: #99aaab;
-    align-items: center;
-    margin: 5px 5px;
-`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
+  margin: 0.3rem;
+  border: 1px solid #efefef;
+  border-radius: 0.2rem;
+  min-width: 160px;
+  text-align: center;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.089);
+`;
 export const IMG = styled.img`
-    width: 150px;
-    height: 150px;
-`
+  width: 120px;
+  height: 120px;
+`;

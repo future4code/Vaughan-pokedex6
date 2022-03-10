@@ -1,5 +1,12 @@
 import styled from 'styled-components'
 
+export const Box = styled.div`
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+
 export const Conteiner = styled.div`
     height: 97vh;
     display: grid ;
@@ -9,6 +16,7 @@ export const Conteiner = styled.div`
     margin: 10px;
     border-radius: 10px;
     min-height: 500px;
+    min-width: 50%;
 `
 export const Header = styled.header`
     display: flex ;
@@ -34,7 +42,17 @@ export const Center = styled.div`
     width: 89%;
     margin: 0px;
     border: 2px solid black;
-    box-shadow: 10px 10px #888888;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
+  margin: 0.3rem;
+  border: 1px solid #efefef;
+  border-radius: 0.2rem;
+  min-width: 160px;
+  text-align: center;
+  box-shadow: 0 3px 15px black;
     
 `
 export const Right = styled.div`
@@ -52,6 +70,7 @@ export const Footer = styled.footer`
     height: 20vh;
     border-radius: 0px 0px 10px 10px;
     min-height: 150px;
+    
 `
 //style footer
 
@@ -66,7 +85,7 @@ export const ConteinerFooter = styled.div`
     margin-top: 10px;
     margin-bottom: 10px;
     border: 2px solid black;
-    min-height: 90px;
+    min-height: 90px;    
 `
 export const NameType = styled.div`
     display: flex;
@@ -86,6 +105,7 @@ export const BoxBottom = styled.div`
     justify-content: space-around;
     width: 100%;
     margin-top: 20px;
+    
 `
 export const Description = styled.div`
     background-color: #8dc73f;
@@ -93,6 +113,8 @@ export const Description = styled.div`
     border: 1px solid black;
     margin-top: 10px;
     margin-bottom: 2px;
+    
 `
+
 
 

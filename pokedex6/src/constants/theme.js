@@ -1,7 +1,13 @@
 import { createTheme } from "@material-ui/core/styles";
-import { primarycolor, secondarycolor, especialcolor } from "./colors";
+import { primarycolor, secondarycolor, rock, ghost, electric,
+ bug, poison, normal, fairy,
+fire, grass, water  } from "./colors";
 
-const theme = createTheme({
+
+export const selectcolor = water
+
+const theme = createTheme(
+  {
   palette: {
     primary: {
       main: primarycolor,
@@ -10,7 +16,11 @@ const theme = createTheme({
     secondary: {
       main: secondarycolor,
     },
+    typecolor:{
+      main: selectcolor,
+    },
   },
+
 });
 
 export default theme;
