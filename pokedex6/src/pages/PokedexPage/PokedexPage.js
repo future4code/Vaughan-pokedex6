@@ -6,16 +6,25 @@ import PokeCard from '../../components/PokeCard/PokeCard';
 import { IMG } from '../../components/PokeCard/styled';
 import onClickCard from "../../components/PokeCard/PokeCard"
 import { HeaderPokedex } from '../../components/PokeCard/Header';
+
 import { goToHome } from '../../routes/coordinator';
 import { useNavigate } from 'react-router-dom';
+
 
 function PokedexPage() {
   const [pokedex, setPokedex] = useState([])
   const navigate = useNavigate();
   const getPokemons = ((id) => {
-    setPokedex(JSON.parse(localStorage.getItem("pokemons")))
-
+    
+    const names = localStorage.getItem("pokemons")
+    
+    // if (names === ""){
+    //   setPokedex([])
+    // } else{
+    setPokedex(JSON.parse(names))
+    // }
   })
+  const navigate = useNavigate();
 
   useEffect(() => {
     getPokemons();
@@ -75,5 +84,6 @@ function PokedexPage() {
     </Conteiner>
   );
 }
+=======
 
 export default PokedexPage;
