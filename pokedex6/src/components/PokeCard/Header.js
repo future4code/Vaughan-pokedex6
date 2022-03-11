@@ -13,8 +13,15 @@ const Header2 = styled.div`
 const ButtonHeader = styled.button`
 margin:8px;
 `
-const H1Header = styled.h1`
-margin-left: 8px;
+export const H1Header = styled.header`
+    display: flex ;
+    background-color: #ff3334;
+    height: 9vh;
+    border-radius: 10px 10px 0px 0px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 4.5vh;
 `
 export const HeaderPokedex = () => {
     const navigate = useNavigate();
@@ -41,8 +48,9 @@ export const HeaderHome = () => {
 export const HeaderDetalhes = () => {
     const navigate = useNavigate();
     return (
-        <Header2>
-            <H1Header>DETALHES</H1Header>
-        </Header2>
+        <H1Header>
+            Detalhes
+            
+        </H1Header>
     )
 }
