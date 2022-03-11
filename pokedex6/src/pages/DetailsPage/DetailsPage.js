@@ -18,7 +18,7 @@ import {
 import axios from "axios";
 import { BASE_URL } from "../../constants/urls";
 import { useParams } from "react-router-dom";
-import { useEffect , useState} from "react";
+import { useEffect, useState } from "react";
 import PokeCard from "../../components/PokeCard/PokeCard";
 import { HeaderDetalhes } from "../../components/PokeCard/Header";
 import { IMG } from "../../components/PokeCard/styled";
@@ -66,7 +66,7 @@ const DetailsPage = () => {
   return (
     <Box>
       <Conteiner>
-        <HeaderDetalhes/>
+        <HeaderDetalhes />
         <Centralizador>
           <Left></Left>
           <Center>
@@ -110,24 +110,28 @@ const DetailsPage = () => {
 
         <Footer>
           <ConteinerFooter>
-            <NameType>
-              <div>
-                <b>Nome:</b> {pokemon.name}
-              </div>
-              <div>
-                <b>Types:</b> {types}
-              </div>
-            </NameType>
-          
-          <BoxBottom>
-            <div></div>
 
-            <button onClick={() => goToHome(navigate)}>Voltar</button>
-            <button onClick={() => goToPokedex(navigate)}>Pokedex</button>
-          </BoxBottom>
-        </ConteinerFooter>
-      </Footer>
-    </Conteiner>
+
+            <NameType>
+              <b>Nome:</b> {pokemon.name}
+
+            </NameType>
+
+            <NameType>
+              <b>Types:</b> {types}
+
+
+            </NameType>
+<BoxBottom>
+  
+              <BoxBottom><button onClick={() => goToHome(navigate)}>Voltar</button></BoxBottom>
+  
+              <BoxBottom><button onClick={() => goToPokedex(navigate)}>Pokedex</button></BoxBottom>
+
+</BoxBottom>
+          </ConteinerFooter>
+        </Footer>
+      </Conteiner>
     </Box >
   );
 };
