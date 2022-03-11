@@ -24,7 +24,7 @@ const HomePage = () => {
         const newPokemon = [];
         data.results.forEach((p) => newPokemon.push(p.name));
         setPokemons((oldPokemon) => [...oldPokemon, ...newPokemon]);
-        console.log(pokemons)
+      
       });
     offset += 20;
   };

@@ -12,8 +12,7 @@ const  PokeCard  = (props) => {
     const params = useParams();
 
   useEffect(() => {
-    console.log(pokemon)
-    console.log(props.pokemon)
+    
     if (pokemon !== props.pokemon) {
       pegaPokemon(props.pokemon);
     }
@@ -40,10 +39,10 @@ const  PokeCard  = (props) => {
   const onClickPokemon = (id) => {
     adicionaNaPokedex(id)
     
-    console.log("adicionado")
   }
   const adicionaNaPokedex = (id) => {
     const pokemons = localStorage.getItem("pokemons")
+    console.log(pokemons)
     const obj = JSON.parse(pokemons)
     
     if ( obj === null){

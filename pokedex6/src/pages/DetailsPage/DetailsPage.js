@@ -57,7 +57,7 @@ const DetailsPage = () => {
       })
       .catch((erro) => console.log(erro.message));
   };
-  console.log(pokemon)
+  
 
   useEffect(() => {
     getDetails();
