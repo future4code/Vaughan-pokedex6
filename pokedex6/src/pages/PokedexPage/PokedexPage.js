@@ -6,9 +6,12 @@ import PokeCard from '../../components/PokeCard/PokeCard';
 import { IMG } from '../../components/PokeCard/styled';
 import onClickCard from "../../components/PokeCard/PokeCard"
 import { HeaderPokedex } from '../../components/PokeCard/Header';
+import { goToHome } from '../../routes/coordinator';
+import { useNavigate } from 'react-router-dom';
 
 function PokedexPage() {
   const [pokedex, setPokedex] = useState([])
+  const navigate = useNavigate();
   const getPokemons = ((id) => {
     setPokedex(JSON.parse(localStorage.getItem("pokemons")))
 
@@ -27,9 +30,10 @@ function PokedexPage() {
       <Centralizador>
         <Left></Left>
         <Center>
-          <h1>Pokedex</h1>
+    
         <ConteinerHome>
           {pokedex.length > 0 && pokedex.map((card) => {
+          
             return (
               <Card key={card.id}>
                  
@@ -61,7 +65,7 @@ function PokedexPage() {
               <img alt='direcional' src={directional} width='50px' height='40px' />
             </div>
 
-            <button>A</button>
+            <button onClick={() => goToHome(navigate)}>Voltar para lista</button>
             <button>B</button>
           </BoxBottom>
 
