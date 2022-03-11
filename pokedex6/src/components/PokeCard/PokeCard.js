@@ -12,11 +12,14 @@ const  PokeCard  = (props) => {
     const params = useParams();
 
   useEffect(() => {
+    console.log(pokemon)
+    console.log(props.pokemon)
     if (pokemon !== props.pokemon) {
       pegaPokemon(props.pokemon);
     }
   }, []);
   const pegaPokemon = (pokeName) => {
+    
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
       .then(response => {
@@ -59,13 +62,19 @@ const  PokeCard  = (props) => {
     return (
     <Conteiner>
         {pokemon && (
-          <IMG src={pokemon.sprites.front_default} 
-          alt={pokemon.name} />)}
+          <PokemonThumbnail
+          id={pokemon.id}
+          name={pokemon.name}
+          type={pokemon.types[0].type.name}
+          image={pokemon.sprites.other.dream_world.front_default}
+          
+          />
+        )}
           <div>
             <button onClick={() => onClickPokemon(pokemon)}>adicionar a pokedex</button>
             <button onClick={()=>onClickCard(pokemon.id)}>ver detalhes</button>
           </div>
-
+         
     </Conteiner>
   );
 };

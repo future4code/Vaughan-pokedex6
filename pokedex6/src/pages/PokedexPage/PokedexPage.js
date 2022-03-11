@@ -1,10 +1,11 @@
-import { Conteiner, Header, Footer, Left, Right, Center, ConteinerFooter, Centralizador, NameType, BoxBottom, Description } from './Styled'
+import { Conteiner, Header, Footer, Left, Right, Center, ConteinerFooter, Centralizador, NameType, BoxBottom, Description, Card } from './Styled'
 import directional from '../../assets/direcional.png'
 import { useEffect, useState } from "react";
 import { ConteinerHome } from '../HomePage/Styled';
 import PokeCard from '../../components/PokeCard/PokeCard';
 import { IMG } from '../../components/PokeCard/styled';
 import onClickCard from "../../components/PokeCard/PokeCard"
+import { HeaderPokedex } from '../../components/PokeCard/Header';
 
 function PokedexPage() {
   const [pokedex, setPokedex] = useState([])
@@ -22,7 +23,7 @@ function PokedexPage() {
   return (
     <Conteiner>
 
-      <Header></Header>
+      <HeaderPokedex/>
       <Centralizador>
         <Left></Left>
         <Center>
@@ -30,13 +31,13 @@ function PokedexPage() {
         <ConteinerHome>
           {pokedex.length > 0 && pokedex.map((card) => {
             return (
-              <PokeCard key={card.id}>
-                 <div>
+              <Card key={card.id}>
+                 
                  <IMG src={card.sprites.front_default}></IMG>
                   <button >Remover da pokedex</button>
                   <button onClick={() => onClickCard(card.id)}>ver detalhes</button>
-                </div>
-              </PokeCard>
+                
+              </Card>
             )
           })}
         </ConteinerHome>
