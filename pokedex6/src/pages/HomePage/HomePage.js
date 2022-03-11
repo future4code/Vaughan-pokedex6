@@ -6,9 +6,8 @@ import { goToPokedex, goToDetails } from "../../routes/coordinator";
 import PokeCard from "../../components/PokeCard/PokeCard";
 import { BoxHome, Header, ConteinerHome } from "./Styled";
 import useRequestData from "../../hooks/useRequestData";
+import { HeaderHome } from "../../components/Header/Header";
 
-
-import { HeaderAll, HeaderHome } from "../../components/Header/Header";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -25,6 +24,7 @@ const HomePage = () => {
         const newPokemon = [];
         data.results.forEach((p) => newPokemon.push(p.name));
         setPokemons((oldPokemon) => [...oldPokemon, ...newPokemon]);
+        console.log(pokemons)
       });
     offset += 20;
   };
@@ -46,15 +46,27 @@ const HomePage = () => {
 
   return (
     <BoxHome>
-      <HeaderHome />
+      <HeaderHome>
+        <div>
+          <h1>HomePage</h1>
+        </div>
+        <div>
+          <button onClick={() => goToPokedex(navigate)}>Pokedex</button>
+        </div>
+  
+      </HeaderHome>
+  
       <ConteinerHome>
-        {pokemons.map((pokemon, i) => (
-          <PokeCard key={i} pokemon={pokemon} />
+        {pokemons.map((pokemon, index) => (
+          
+          <PokeCard pokemon={pokemon} key={pokemon}
+            
+          />
         ))}
       </ConteinerHome>
     </BoxHome>
   );
 };
-  
+
 
 export default HomePage;

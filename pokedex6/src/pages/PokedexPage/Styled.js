@@ -94,6 +94,13 @@ export const Description = styled.div`
     margin-top: 10px;
     margin-bottom: 2px;
 `
+export const Card = styled.div`
+    width: 50%;
+    border: 1px solid black;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+`
 
 
 

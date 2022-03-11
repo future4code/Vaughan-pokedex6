@@ -18,9 +18,9 @@ import {
 import axios from "axios";
 import { BASE_URL } from "../../constants/urls";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-
-import { HeaderAll } from "../../components/Header/Header";
+import { useEffect , useState} from "react";
+import PokeCard from "../../components/PokeCard/PokeCard";
+import { HeaderDetalhes } from "../../components/PokeCard/Header";
 import { IMG } from "../../components/PokeCard/styled";
 
 
@@ -66,7 +66,7 @@ const DetailsPage = () => {
   return (
     <Box>
       <Conteiner>
-        <HeaderAll />
+        <HeaderDetalhes/>
         <Centralizador>
           <Left></Left>
           <Center>
