@@ -100,6 +100,7 @@ export const Card = styled.div`
     display: grid;
     justify-items: center;
     align-items: center;
+    justify-content: center;
 `
 
 

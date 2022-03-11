@@ -11,12 +11,17 @@ const Header2 = styled.div`
     -webkit-text-stroke-color: black;
 `
 const ButtonHeader = styled.button`
-margin:8px;
+
+display: flex;
+align-items: flex-end;
+justify-content: right;
+
 `
 export const H1Header = styled.header`
     display: flex ;
     background-color: #ff3334;
     height: 9vh;
+    width: 97.9vw;
     border-radius: 10px 10px 0px 0px;
     align-items: center;
     justify-content: center;
@@ -26,12 +31,7 @@ export const H1Header = styled.header`
 export const HeaderPokedex = () => {
     const navigate = useNavigate();
     return (
-        <Header2>
-            <H1Header>POKEDEX</H1Header>
-            <div>
-                <button onClick={() => goToHome(navigate)}>Voltar para lista</button>
-            </div>
-        </Header2>
+        <H1Header>POKEDEX </H1Header>
     )
 }
 export const HeaderHome = () => {
@@ -50,7 +50,7 @@ export const HeaderDetalhes = () => {
     return (
         <H1Header>
             Detalhes
-            
+
         </H1Header>
     )
 }

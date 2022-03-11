@@ -6,11 +6,14 @@ import PokeCard from '../../components/PokeCard/PokeCard';
 import { IMG } from '../../components/PokeCard/styled';
 import onClickCard from "../../components/PokeCard/PokeCard"
 import { HeaderPokedex } from '../../components/PokeCard/Header';
-import { useNavigate } from "react-router-dom";
-import { goToDetails, goToPokedex } from "../../routes/coordinator";
+
+import { goToHome } from '../../routes/coordinator';
+import { useNavigate } from 'react-router-dom';
+
 
 function PokedexPage() {
   const [pokedex, setPokedex] = useState([])
+  const navigate = useNavigate();
   const getPokemons = ((id) => {
     
     const names = localStorage.getItem("pokemons")
@@ -27,74 +30,60 @@ function PokedexPage() {
     getPokemons();
   }, []);
 
-  const onClickCard = (id) => {
-
-    goToDetails(navigate, id)
-  }
-
-  const removePokemon = (id) => {
-    const newPokedex = [...pokedex];
-    console.log(id)
-    pokedex.findIndex((poke, index) => {
-      if (poke.id === id){
-      
-      newPokedex.splice(index, 1);
-      localStorage.setItem("pokemons", JSON.stringify(newPokedex))
-      setPokedex(newPokedex);
-     
-      
-  }})}
-  
-      return (
-        <Conteiner>
-
-          <HeaderPokedex />
-          <Centralizador>
-            <Left></Left>
-            <Center>
-              <h1>Pokedex</h1>
-              <ConteinerHome>
-                {pokedex.length > 0 && pokedex.map((card) => {
-                  return (
-                    <Card key={card.id}>
-
-                      <IMG src={card.sprites.front_default}></IMG>
-                      <button onClick={() => removePokemon(card.id)}>Remover da pokedex</button>
-                      <button onClick={() => onClickCard(card.id)}>ver detalhes</button>
-
-                    </Card>
-                  )
-                })}
-              </ConteinerHome>
-
-            </Center>
-            <Right></Right>
-          </Centralizador>
-
-          <Footer>
-            <ConteinerFooter>
-
-              <NameType>
-
-                <div>Pokedex</div>
 
 
-              </NameType>
+  return (
+    <Conteiner>
 
-              <BoxBottom>
-                <div>
-                  <img alt='direcional' src={directional} width='50px' height='40px' />
-                </div>
+      <HeaderPokedex/>
+      <Centralizador>
+        <Left></Left>
+        <Center>
+    
+        <ConteinerHome>
+          {pokedex.length > 0 && pokedex.map((card) => {
+          
+            return (
+              <Card key={card.id}>
+                 
+                 <IMG src={card.sprites.front_default}></IMG>
+                  <button >Remover da pokedex</button>
+                  <button onClick={() => onClickCard(card.id)}>ver detalhes</button>
+                
+              </Card>
+            )
+          })}
+        </ConteinerHome>
 
-                <button>A</button>
-                <button>B</button>
-              </BoxBottom>
+        </Center>
+        <Right></Right>
+      </Centralizador>
 
-            </ConteinerFooter>
-          </Footer>
+      <Footer>
+        <ConteinerFooter>
 
-        </Conteiner>
-      );
-    }
+          <NameType>
+
+            <div>Pokedex</div>
+
+
+          </NameType>
+
+          <BoxBottom>
+            <div>
+              <img alt='direcional' src={directional} width='50px' height='40px' />
+            </div>
+
+            <button onClick={() => goToHome(navigate)}>Voltar para lista</button>
+            <button>B</button>
+          </BoxBottom>
+
+        </ConteinerFooter>
+      </Footer>
+
+    </Conteiner>
+  );
+}
+=======
 
 export default PokedexPage;
